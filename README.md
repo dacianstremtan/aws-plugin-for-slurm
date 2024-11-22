@@ -61,6 +61,7 @@ This JSON file specifies the plugin and Slurm configuration parameters.
 * `LogLevel`: Logging level. Possible values are `CRITICAL`, `ERROR`, `WARNING`, `INFO`, `DEBUG`. Default is `DEBUG`.
 * `LogFileName`: Full path to the log file location. Default is `PLUGIN_PATH\aws_plugin.log`.
 * `SlurmBinPath`: Full path to the folder that contains Slurm binaries like `scontrol` or `sinfo`. Example: `/slurm/bin`.
+* `EnableIPv6`: Deciding flag to use the node's IPv6 address instead of the internal legacy IP. Values "0" do not use IPv6 default value, "1" use the IPv6.
 * `SlurmConf`: These attributes are used by `generate_conf.py` to generate the content that must be appended to the Slurm configuration file. You must specify at least the following attributes:
    * `PrivateData`: Must be equal to `CLOUD` such that EC2 compute nodes that are idle are returned by Slurm command outputs such as `sinfo`.
    * `ResumeProgram`: Full path to the location of `resume.py`. Example: `/slurm/etc/aws/resume.py`.
@@ -78,6 +79,7 @@ Example:
    "LogLevel": "INFO",
    "LogFileName": "/var/log/slurm/aws.log",
    "SlurmBinPath": "/slurm/bin",
+   "EnableIPv6": "0",
    "SlurmConf": {
       "PrivateData": "CLOUD",
       "ResumeProgram": "/slurm/etc/aws/resume.py",
