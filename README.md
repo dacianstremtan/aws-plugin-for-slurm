@@ -43,6 +43,7 @@ This JSON file specifies the plugin and Slurm configuration parameters.
    "LogLevel": "STRING",
    "LogFileName": "STRING",
    "SlurmBinPath": "STRING",
+   "EnableIPv6": "0",
    "SlurmConf": {
       "PrivateData": "STRING",
       "ResumeProgram": "STRING",
