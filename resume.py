@@ -129,6 +129,8 @@ for partition_name, nodegroups in nodes_to_resume.items():
                             else:
                                 ip_address = instance_details['PrivateIpAddress']
                                 hostname = 'ip-%s' %'-'.join(ip_address.split('.'))
+                            if config['UseNodeName'] == '1':
+                                hostname = node_name                                
                                 
                 logger.info('Launched node %s %s %s' %(node_name, instance_id, ip_address))
                 
